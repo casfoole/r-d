@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindroom</title>
+</head>
+<body>
+<button onclick="reload()">Kies een woord?</button>
+
+<a>Your palindroom = </a><a id="demo"></a>
+
+<script>
+
+    function palindroom(){
+        var str = prompt("Check of jouw woord een palindroom is", "Race car");
+
+        var kleineletter = (/[^A-Za-z0-9]/g);
+
+        var naarKleinLetter = str.toLowerCase().replace(kleineletter, '');
+
+        var strdraaien = naarKleinLetter.split('').reverse().join('');
+        return strdraaien === naarKleinLetter;
+
+    }
+
+    function reload() {
+        location.reload();
+    }
+
+    document.getElementById("demo").innerHTML = palindroom();
+
+
+
+</script>
+</body>
+</html>
