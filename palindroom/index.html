@@ -14,11 +14,13 @@
     function palindroom(){
         var str = prompt("Check of jouw woord een palindroom is", "Race car");
 
-        var kleineletter = (/[^A-Za-z0-9]/g);
+        var tekens = (/[^A-Za-z0-9]/g);
 
-        var naarKleinLetter = str.toLowerCase().replace(kleineletter, '');
+        var naarKleinLetter = str.toLowerCase().replace(tekens, '');
+
 
         var strdraaien = naarKleinLetter.split('').reverse().join('');
+
         return strdraaien === naarKleinLetter;
 
     }
